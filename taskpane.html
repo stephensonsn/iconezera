@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; script-src &#39;self&#39; https://appsforoffice.microsoft.com; style-src &#39;self&#39; &#39;unsafe-inline&#39;; img-src &#39;self&#39; data:; font-src &#39;self&#39;; connect-src &#39;self&#39; https://appsforoffice.microsoft.com https://api.iconify.design https://api.simplesvg.com https://api.unisvg.com https://api.mymemory.translated.net; base-uri &#39;none&#39;; form-action &#39;none&#39;; object-src &#39;none&#39;; frame-src https://telemetryservice.firstpartyapps.oaspapps.com">
+    <meta name="referrer" content="no-referrer">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iconeZERA</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <script type="module" crossorigin src="./assets/taskpane-Bg7-BuYG.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/taskpane-BnTtrk9H.css">
+  </head>
+  <body>
+    <header>
+      <div class="titlebar">
+        <h1 class="wordmark">icone<b>ZERA</b></h1>
+        <div class="language">
+          <button id="language-button" type="button" aria-haspopup="listbox" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18Zm-9 9h18M12 3c2.5 2.6 3.7 5.6 3.7 9S14.5 18.4 12 21c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3Z"/></svg>
+            <span id="language-code"></span>
+          </button>
+          <div id="language-menu" hidden>
+            <ul id="language-list" role="listbox"></ul>
+            <p><span id="language-hint"></span> <a href="mailto:stephenson.silva@outlook.com">stephenson.silva@outlook.com</a></p>
+          </div>
+        </div>
+      </div>
+      <form id="search-form" role="search">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 0 0 0-13Zm4.7 11.2L20 20"/></svg>
+        <input id="search-input" type="search" dir="auto" autocomplete="off" maxlength="80" autofocus />
+        <button id="search-button" type="submit">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6l-6 6"/></svg>
+        </button>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+    </header>
+    <main>
+      <section id="suggestions">
+        <h2 id="suggestions-title"></h2>
+        <ul id="suggestion-list"></ul>
+      </section>
+      <ul id="grid" class="sheet"></ul>
+      <div id="loader" class="sheet" role="progressbar" hidden></div>
+      <button id="more" type="button" hidden></button>
+    </main>
+    <footer id="footer"></footer>
+    <div id="toast" role="alert" hidden></div>
+  </body>
+</html>
