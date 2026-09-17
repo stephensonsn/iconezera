@@ -1,0 +1,14 @@
+{
+  "name": "@iconezera/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@iconify/utils": "^3.1.7"
+  },
+  "devDependencies": {
+    "@iconify/types": "^2.0.0"
+  }
+}

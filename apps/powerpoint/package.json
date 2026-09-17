@@ -1,0 +1,16 @@
+{
+  "name": "@iconezera/powerpoint",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@iconezera/core": "*"
+  },
+  "devDependencies": {
+    "@iconify/types": "^2.0.0"
+  }
+}

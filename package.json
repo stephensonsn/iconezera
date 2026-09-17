@@ -1,0 +1,40 @@
+{
+  "name": "iconezera",
+  "private": true,
+  "version": "0.1.0",
+  "description": "iconeZERA — busca e insere ícones SVG open source no PowerPoint (e, em breve, Photoshop).",
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @iconezera/powerpoint",
+    "build": "npm run build -w @iconezera/powerpoint",
+    "test": "vitest run",
+    "lint": "tsc -b && eslint .",
+    "certs": "office-addin-dev-certs install",
+    "validate": "office-addin-manifest validate apps/powerpoint/manifest.xml",
+    "sideload": "office-addin-debugging start apps/powerpoint/manifest.xml desktop --app powerpoint --no-debug --dev-server \"npm run dev\" --dev-server-port 3000",
+    "sideload:stop": "office-addin-debugging stop apps/powerpoint/manifest.xml",
+    "build:prod": "npm run build && node scripts/make-prod-manifest.mjs",
+    "validate:prod": "office-addin-manifest validate apps/powerpoint/dist/manifest.xml"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^22.20.3",
+    "@types/office-js": "^1.0.0",
+    "eslint": "^9.0.0",
+    "office-addin-debugging": "^6.0.0",
+    "office-addin-dev-certs": "^2.0.0",
+    "office-addin-manifest": "^2.0.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.0.0",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.1"
+  },
+  "overrides": {
+    "adm-zip": "^0.6.1"
+  }
+}

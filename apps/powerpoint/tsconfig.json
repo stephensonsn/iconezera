@@ -1,0 +1,6 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "rootDir": "src", "outDir": ".tsbuild", "types": ["office-js", "vite/client"] },
+  "include": ["src"],
+  "references": [{ "path": "../../packages/core" }]
+}

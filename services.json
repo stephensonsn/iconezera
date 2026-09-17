@@ -1,0 +1,8 @@
+{
+  "iconHosts": [
+    "https://api.iconify.design",
+    "https://api.simplesvg.com",
+    "https://api.unisvg.com"
+  ],
+  "translationHost": "https://api.mymemory.translated.net"
+}
