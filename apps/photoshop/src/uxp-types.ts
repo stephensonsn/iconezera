@@ -7,7 +7,6 @@ export interface Layer {
   name: string;
   textItem?: { contents: string };
   boundsNoEffects: Bounds;
-  scale(width: number, height: number): Promise<void>;
 }
 
 export interface Document {

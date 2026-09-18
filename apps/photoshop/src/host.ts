@@ -8,8 +8,8 @@ export interface Host {
   selectedText(): Promise<string>;
   /** Chamado quando a seleção de camadas muda. */
   onSelectionChanged(handler: () => void): void;
-  /** Insere o SVG no documento ativo. `sizeRatio` = fração do menor lado do documento. */
-  insertSvg(svg: string, sizeRatio: number): Promise<"inserted" | "copied">;
+  /** Insere o SVG (já dimensionado em `sizePx`) no documento ativo e garante esse tamanho em pixels. */
+  insertSvg(svg: string, sizePx: number): Promise<"inserted" | "copied">;
   /** true quando não há documento aberto. */
   hasDocument(): boolean;
 }

@@ -4,7 +4,8 @@ Plugin de painel para Photoshop 2026 e Photoshop (Beta). Um único pacote serve 
 
 ## O que faz
 - Busca em qualquer idioma (mesmo motor do PowerPoint, mesmo seletor de idioma).
-- Ícone entra como **Smart Object vetorial**, centralizado, com 25% do menor lado do documento, na **cor de primeiro plano** atual (ícones multicoloridos mantêm as cores).
+- Ícone entra como **Smart Object vetorial**, centralizado, no **tamanho em pixels** e na **cor** escolhidos na barra inferior (amostras, hex ou cor de primeiro plano do Photoshop). Ícones multicoloridos mantêm as cores. Depois de colocar, o plugin mede a camada e corrige a escala para o tamanho pedido.
+- Barra inferior: **Cor**, **Tamanho (px)** e **Zoom** da grade (S/M/L). Escolhas ficam salvas.
 - Se a camada ativa for de texto (até 3 palavras), o conteúdo dela vira a busca ao abrir o painel e ao trocar de camada.
 
 ## Rodar em desenvolvimento

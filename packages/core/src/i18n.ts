@@ -24,6 +24,11 @@ const pt = {
   insertError: "Não foi possível inserir o ícone. Clique no slide e tente de novo.",
   insertErrorNoDocument: "Abra um documento no Photoshop para inserir o ícone.",
   insertErrorLayer: "Não foi possível inserir o ícone. Tente de novo.",
+  colorLabel: "Cor",
+  sizeLabel: "Tamanho",
+  zoomLabel: "Zoom",
+  foregroundColor: "Cor de primeiro plano do Photoshop",
+  customColor: "Cor personalizada (hex)",
 };
 
 type Messages = typeof pt;
@@ -55,6 +60,11 @@ const en: Messages = {
   insertError: "Couldn’t insert the icon. Click the slide and try again.",
   insertErrorNoDocument: "Open a document in Photoshop to insert the icon.",
   insertErrorLayer: "Couldn’t insert the icon. Try again.",
+  colorLabel: "Color",
+  sizeLabel: "Size",
+  zoomLabel: "Zoom",
+  foregroundColor: "Photoshop foreground color",
+  customColor: "Custom color (hex)",
 };
 
 const es: Messages = {
@@ -83,6 +93,11 @@ const es: Messages = {
   insertError: "No se pudo insertar el icono. Haz clic en la diapositiva e inténtalo de nuevo.",
   insertErrorNoDocument: "Abre un documento en Photoshop para insertar el icono.",
   insertErrorLayer: "No se pudo insertar el icono. Inténtalo de nuevo.",
+  colorLabel: "Color",
+  sizeLabel: "Tamaño",
+  zoomLabel: "Zoom",
+  foregroundColor: "Color frontal de Photoshop",
+  customColor: "Color personalizado (hex)",
 };
 
 const MESSAGES: Record<string, Messages> = { pt, en, es };

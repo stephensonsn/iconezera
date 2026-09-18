@@ -22,7 +22,7 @@ export function photoshopHost(): Host {
       ps.action.addNotificationListener([{ event: "select" }], handler);
     },
 
-    async insertSvg(svg, sizeRatio) {
+    async insertSvg(svg, sizePx) {
       const document = ps.app.activeDocument;
       if (!document) throw new NoDocumentError();
 
@@ -45,16 +45,25 @@ export function photoshopHost(): Host {
             ],
             {},
           );
-          // Smart Object vetorial entra centralizado; ajusta para a fração pedida do menor lado.
-          const layer = document.activeLayers[0];
-          const bounds = layer?.boundsNoEffects;
-          if (!layer || !bounds) return;
+          // O Photoshop pode reinterpretar as dimensões do SVG (resolução do documento, preferência
+          // "redimensionar ao colocar"); mede o resultado e corrige para o tamanho pedido em pixels.
+          const bounds = document.activeLayers[0]?.boundsNoEffects;
+          if (!bounds) return;
           const current = Math.max(bounds.right - bounds.left, bounds.bottom - bounds.top);
-          const target = Math.min(document.width, document.height) * sizeRatio;
-          if (current > 0) {
-            const percent = (target / current) * 100;
-            await layer.scale(percent, percent);
-          }
+          if (current <= 0 || Math.abs(current - sizePx) < 1) return;
+          const percent = (sizePx / current) * 100;
+          await ps.action.batchPlay(
+            [
+              {
+                _obj: "transform",
+                _target: [{ _ref: "layer", _enum: "ordinal", _value: "targetEnum" }],
+                freeTransformCenterState: { _enum: "quadCenterState", _value: "QCSAverage" },
+                width: { _unit: "percentUnit", _value: percent },
+                height: { _unit: "percentUnit", _value: percent },
+              },
+            ],
+            {},
+          );
         },
         { commandName: "iconeZERA" },
       );
