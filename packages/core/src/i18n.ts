@@ -19,8 +19,11 @@ const pt = {
   insertIcon: "Inserir {name}",
   inserted: "Ícone inserido no slide",
   insertedPng: "Inserido como imagem (PNG)",
-  copied: "SVG copiado (fora do PowerPoint)",
+  insertedLayer: "Ícone inserido como camada vetorial",
+  copied: "SVG copiado (fora do aplicativo)",
   insertError: "Não foi possível inserir o ícone. Clique no slide e tente de novo.",
+  insertErrorNoDocument: "Abra um documento no Photoshop para inserir o ícone.",
+  insertErrorLayer: "Não foi possível inserir o ícone. Tente de novo.",
 };
 
 type Messages = typeof pt;
@@ -47,8 +50,11 @@ const en: Messages = {
   insertIcon: "Insert {name}",
   inserted: "Icon inserted into the slide",
   insertedPng: "Inserted as an image (PNG)",
-  copied: "SVG copied (outside PowerPoint)",
+  insertedLayer: "Icon inserted as a vector layer",
+  copied: "SVG copied (outside the app)",
   insertError: "Couldn’t insert the icon. Click the slide and try again.",
+  insertErrorNoDocument: "Open a document in Photoshop to insert the icon.",
+  insertErrorLayer: "Couldn’t insert the icon. Try again.",
 };
 
 const es: Messages = {
@@ -72,8 +78,11 @@ const es: Messages = {
   insertIcon: "Insertar {name}",
   inserted: "Icono insertado en la diapositiva",
   insertedPng: "Insertado como imagen (PNG)",
-  copied: "SVG copiado (fuera de PowerPoint)",
+  insertedLayer: "Icono insertado como capa vectorial",
+  copied: "SVG copiado (fuera de la aplicación)",
   insertError: "No se pudo insertar el icono. Haz clic en la diapositiva e inténtalo de nuevo.",
+  insertErrorNoDocument: "Abre un documento en Photoshop para insertar el icono.",
+  insertErrorLayer: "No se pudo insertar el icono. Inténtalo de nuevo.",
 };
 
 const MESSAGES: Record<string, Messages> = { pt, en, es };

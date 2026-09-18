@@ -6,7 +6,10 @@ import {
   LANGUAGES,
   resolveLanguage,
   searchIcons,
+  setUiLanguage,
+  suggestions,
   svgDataUri,
+  t,
   translateQuery,
   type IconResult,
   type Language,
@@ -14,7 +17,6 @@ import {
 } from "@iconezera/core";
 import type { IconifyIcon } from "@iconify/types";
 import services from "../../../services.json";
-import { setUiLanguage, suggestions, t } from "./i18n";
 import { getSelectedText, insertSvg, isOfficeDark, onSelectionChanged, waitForOffice } from "./office";
 
 const PAGE_SIZE = 60;

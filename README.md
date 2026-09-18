@@ -16,6 +16,7 @@ Os ícones vêm da API pública do [Iconify](https://iconify.design) (200 mil+ �
 |---|---|
 | `packages/core` | Cliente Iconify (busca, filtro de licença, download em lote, montagem do SVG) e dicionário PT→EN. Independente de host — será reutilizado no Photoshop. |
 | `apps/powerpoint` | Add-in de painel de tarefas (Office.js + Vite). |
+| `apps/photoshop` | Plugin UXP para Photoshop 2026/Beta (ver `docs/photoshop.md`). |
 | `scripts/make-icons.py` | Gera os PNGs do ícone do add-in. |
 | `services.json` | Servidores de ícones e de tradução. Trocar um host aqui atualiza o código **e** a CSP no próximo deploy — sem mexer em código. |
 | `docs/` | Textos da loja (`store-listing.md`) e revisão de segurança (`security-review.md`). |
@@ -66,7 +67,7 @@ npm run validate  # valida o manifest no serviço da Microsoft
 1. ✅ Núcleo + add-in PowerPoint
 2. ✅ Hospedagem no GitHub Pages + manifest de produção
 3. Publicação no AppSource (pendente: conta no Partner Center e capturas de tela)
-4. Plugin Photoshop (UXP) reutilizando `packages/core` + Adobe Exchange
+4. ✅ Plugin Photoshop (UXP) — pendente: teste no Photoshop e publicação no Adobe Exchange
 
 ## Licença
 

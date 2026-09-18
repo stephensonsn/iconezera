@@ -19,7 +19,9 @@
     "sideload": "office-addin-debugging start apps/powerpoint/manifest.xml desktop --app powerpoint --no-debug --dev-server \"npm run dev\" --dev-server-port 3000",
     "sideload:stop": "office-addin-debugging stop apps/powerpoint/manifest.xml",
     "build:prod": "npm run build && node scripts/make-prod-manifest.mjs",
-    "validate:prod": "office-addin-manifest validate apps/powerpoint/dist/manifest.xml"
+    "validate:prod": "office-addin-manifest validate apps/powerpoint/dist/manifest.xml",
+    "build:ps": "npm run build -w @iconezera/photoshop",
+    "dev:ps": "npm run dev -w @iconezera/photoshop"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",

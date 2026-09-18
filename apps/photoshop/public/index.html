@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>iconeZERA</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="panel">
+      <div class="toolbar">
+        <div class="search">
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 0 0 0-13Zm4.7 11.2L20 20"/></svg>
+          <input id="search-input" type="text" maxlength="80" />
+        </div>
+        <button id="search-button" class="cta" type="button"></button>
+        <button id="language-button" class="quiet" type="button"><span id="language-code"></span></button>
+      </div>
+      <p id="status"></p>
+      <div id="language-menu" hidden>
+        <div id="language-list"></div>
+        <p class="hint"><span id="language-hint"></span> <a id="language-mail" href="mailto:stephenson.silva@outlook.com">stephenson.silva@outlook.com</a></p>
+      </div>
+      <div id="content">
+        <div id="suggestions">
+          <p id="suggestions-title" class="label"></p>
+          <div id="suggestion-list"></div>
+        </div>
+        <div id="grid"></div>
+        <div id="loader" hidden></div>
+        <button id="more" class="secondary" type="button" hidden></button>
+      </div>
+      <p id="footer"></p>
+      <div id="toast" hidden></div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>

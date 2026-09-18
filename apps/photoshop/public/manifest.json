@@ -1,0 +1,37 @@
+{
+  "manifestVersion": 5,
+  "id": "com.iconezera.photoshop",
+  "name": "iconeZERA",
+  "version": "0.1.0",
+  "main": "index.html",
+  "host": { "app": "PS", "minVersion": "24.0.0" },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "iconezera.panel",
+      "label": { "default": "iconeZERA" },
+      "minimumSize": { "width": 240, "height": 320 },
+      "maximumSize": { "width": 2000, "height": 2000 },
+      "preferredDockedSize": { "width": 320, "height": 560 },
+      "preferredFloatingSize": { "width": 320, "height": 560 },
+      "icons": [
+        { "width": 23, "height": 23, "path": "icons/panel-dark.png", "scale": [1, 2], "theme": ["darkest", "dark", "medium"], "species": ["generic"] },
+        { "width": 23, "height": 23, "path": "icons/panel-light.png", "scale": [1, 2], "theme": ["lightest", "light"], "species": ["generic"] }
+      ]
+    }
+  ],
+  "icons": [
+    { "width": 48, "height": 48, "path": "icons/plugin.png", "scale": [1, 2], "theme": ["darkest", "dark", "medium", "lightest", "light"], "species": ["pluginList"] }
+  ],
+  "requiredPermissions": {
+    "network": {
+      "domains": [
+        "https://api.iconify.design",
+        "https://api.simplesvg.com",
+        "https://api.unisvg.com",
+        "https://api.mymemory.translated.net"
+      ]
+    },
+    "localFileSystem": "plugin"
+  }
+}

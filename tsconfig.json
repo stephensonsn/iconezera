@@ -1,4 +1,14 @@
 {
   "files": [],
-  "references": [{ "path": "packages/core" }, { "path": "apps/powerpoint" }]
+  "references": [
+    {
+      "path": "packages/core"
+    },
+    {
+      "path": "apps/powerpoint"
+    },
+    {
+      "path": "apps/photoshop"
+    }
+  ]
 }
