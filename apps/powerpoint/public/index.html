@@ -1,68 +1,120 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'" />
     <meta name="referrer" content="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>iconeZERA — ícones SVG gratuitos no PowerPoint</title>
-    <meta name="description" content="Complemento gratuito para PowerPoint: busque em qualquer idioma e insira ícones SVG open source direto no slide." />
+    <title>iconeZERA — free SVG icons in PowerPoint and Photoshop</title>
+    <meta name="description" content="Free add-in for PowerPoint and plugin for Photoshop: search in any language and insert open source SVG icons." />
     <link rel="icon" href="./assets/icon-32.png" />
     <link rel="stylesheet" href="./pages.css" />
   </head>
   <body>
     <main>
-      <p class="wordmark">icone<b>ZERA</b></p>
-      <h1>Ícones SVG gratuitos, direto no slide e no Photoshop.</h1>
-      <p class="lede">Digite o que procura — em qualquer idioma —, dê Enter e clique no ícone. No PowerPoint ele entra como SVG editável; no Photoshop, como Smart Object vetorial na cor e no tamanho que você escolher.</p>
-      <p>
-        <a class="cta" href="./downloads/iconezera-photoshop.ccx">Baixar para Photoshop (.ccx)</a>
-        <a class="cta" href="./manifest.xml" download="iconezera-manifest.xml">Baixar para PowerPoint (manifest)</a>
-      </p>
+      <div class="topbar">
+        <p class="wordmark">icone<b>ZERA</b></p>
+        <button id="lang-toggle" type="button">PT-BR</button>
+      </div>
 
-      <h2 id="instalar">Como instalar</h2>
-      <h3>Photoshop (2026 ou Beta, versão 24 ou superior)</h3>
-      <ol>
-        <li>Baixe o arquivo <code>iconezera-photoshop.ccx</code> pelo botão acima.</li>
-        <li>Dê dois cliques nele. O app Creative Cloud instala o plugin.</li>
-        <li>No Photoshop, abra <strong>Plug-ins → iconeZERA</strong>.</li>
-      </ol>
-      <h3>PowerPoint Web</h3>
-      <ol>
-        <li>Baixe o manifest pelo botão acima.</li>
-        <li>Em <a href="https://powerpoint.office.com" rel="noopener">powerpoint.office.com</a>, abra uma apresentação → <strong>Inserir → Suplementos → Carregar meu suplemento</strong> e escolha o arquivo.</li>
-      </ol>
-      <h3>PowerPoint para Windows e Mac</h3>
-      <p>Enquanto o iconeZERA não está no AppSource, a instalação é por <em>sideload</em>: no Windows, compartilhe uma pasta com o manifest e cadastre-a em <strong>Arquivo → Opções → Central de Confiabilidade → Catálogos de Suplementos Confiáveis</strong>; no Mac, copie o manifest para <code>~/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef</code> e reabra o PowerPoint. Em empresas, o administrador do Microsoft 365 pode instalar para todos em <strong>Centro de administração → Aplicativos integrados</strong>.</p>
+      <div lang="en">
+        <h1>Free SVG icons, straight into your slide and your Photoshop canvas.</h1>
+        <p class="lede">Type what you need — in any language —, press Enter and click the icon. In PowerPoint it lands as an editable SVG; in Photoshop, as a vector Smart Object in the color and size you choose.</p>
+        <p>
+          <a class="cta" href="./downloads/iconezera-photoshop.ccx">Download for Photoshop (.ccx)</a>
+          <a class="cta" href="./manifest.xml" download="iconezera-manifest.xml">Download for PowerPoint (manifest)</a>
+        </p>
 
-      <h2>Como funciona</h2>
-      <ol>
-        <li>Abra o painel: <strong>Página Inicial → iconeZERA</strong> no PowerPoint, ou <strong>Plug-ins → iconeZERA</strong> no Photoshop.</li>
-        <li>Digite um termo (ou selecione uma palavra no slide / uma camada de texto antes de abrir o painel).</li>
-        <li>Clique no ícone. No PowerPoint, recolora ou converta em forma; no Photoshop, escolha cor e tamanho na barra inferior antes de clicar.</li>
-      </ol>
-      <p>Mais de 200 mil ícones open source via <a href="https://iconify.design" rel="noopener">Iconify</a>, apenas de coleções cuja licença dispensa crédito ao autor (MIT, Apache 2.0, ISC, CC0 e similares). Gratuito, sem conta, sem anúncios.</p>
+        <h2 id="install">How to install</h2>
+        <h3>Photoshop (2026 or Beta, version 24 or later)</h3>
+        <ol>
+          <li>Download <code>iconezera-photoshop.ccx</code> with the button above.</li>
+          <li>Double-click it. The Creative Cloud app installs the plugin.</li>
+          <li>In Photoshop, open <strong>Plugins → iconeZERA</strong>.</li>
+        </ol>
+        <h3>PowerPoint for the web</h3>
+        <ol>
+          <li>Download the manifest with the button above.</li>
+          <li>At <a href="https://powerpoint.office.com" rel="noopener">powerpoint.office.com</a>, open a presentation → <strong>Insert → Add-ins → Upload My Add-in</strong> and pick the file.</li>
+        </ol>
+        <h3>PowerPoint for Windows and Mac</h3>
+        <p>Until iconeZERA is listed on AppSource, installation is by <em>sideloading</em>: on Windows, share a folder containing the manifest and register it under <strong>File → Options → Trust Center → Trusted Add-in Catalogs</strong>; on Mac, copy the manifest to <code>~/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef</code> and reopen PowerPoint. In organizations, the Microsoft 365 admin can deploy it to everyone under <strong>Admin center → Integrated apps</strong>.</p>
 
-      <h2 id="suporte">Suporte</h2>
-      <p>Dúvidas, problemas ou pedido de um novo idioma:</p>
-      <ul>
-        <li>E-mail: <a href="mailto:stephenson.silva@outlook.com">stephenson.silva@outlook.com</a></li>
-        <li>Problemas e sugestões: <a href="https://github.com/stephensonsn/iconezera/issues" rel="noopener">github.com/stephensonsn/iconezera/issues</a></li>
-      </ul>
-      <h3>Problemas comuns</h3>
-      <ul>
-        <li><strong>O ícone não foi inserido:</strong> clique em uma área vazia do slide e tente de novo.</li>
-        <li><strong>Nenhum resultado:</strong> tente um termo mais simples ou troque o idioma no globo do painel.</li>
-        <li><strong>Entrou como imagem, não SVG:</strong> versões antigas do Office não aceitam SVG; o painel usa PNG automaticamente.</li>
-        <li><strong>Photoshop: "Abra um documento":</strong> o plugin só insere com um documento aberto.</li>
-      </ul>
+        <h2>How it works</h2>
+        <ol>
+          <li>Open the panel: <strong>Home → iconeZERA</strong> in PowerPoint, or <strong>Plugins → iconeZERA</strong> in Photoshop.</li>
+          <li>Type a term (or select a word on the slide / a text layer before opening the panel).</li>
+          <li>Click the icon. In PowerPoint, recolor it or convert it to a shape; in Photoshop, pick color and size in the bottom bar before clicking.</li>
+        </ol>
+        <p>200,000+ open source icons via <a href="https://iconify.design" rel="noopener">Iconify</a>, limited to collections whose license requires no attribution (MIT, Apache 2.0, ISC, CC0 and similar). Free, no account, no ads.</p>
 
-      <h2 lang="en">English</h2>
-      <p lang="en">iconeZERA is a free add-in for PowerPoint and plugin for Photoshop: search in any language and insert open source SVG icons straight into your slide or as a vector Smart Object. Downloads: <a href="./downloads/iconezera-photoshop.ccx">Photoshop (.ccx)</a> · <a href="./manifest.xml" download="iconezera-manifest.xml">PowerPoint manifest</a>. Icons come from <a href="https://iconify.design" rel="noopener">Iconify</a>, limited to collections whose license requires no attribution. No account, no ads. Support: <a href="mailto:stephenson.silva@outlook.com">stephenson.silva@outlook.com</a>.</p>
+        <h2 id="support">Support</h2>
+        <p>Questions, problems or a request for a new language:</p>
+        <ul>
+          <li>Email: <a href="mailto:stephenson.silva@outlook.com">stephenson.silva@outlook.com</a></li>
+          <li>Issues and suggestions: <a href="https://github.com/stephensonsn/iconezera/issues" rel="noopener">github.com/stephensonsn/iconezera/issues</a></li>
+        </ul>
+        <h3>Common problems</h3>
+        <ul>
+          <li><strong>The icon wasn't inserted:</strong> click an empty area of the slide and try again.</li>
+          <li><strong>No results:</strong> try a simpler term or switch the language with the globe button in the panel.</li>
+          <li><strong>It came in as an image, not SVG:</strong> older Office versions don't accept SVG; the panel falls back to PNG.</li>
+          <li><strong>Photoshop: "Open a document":</strong> the plugin only inserts into an open document.</li>
+        </ul>
+        <footer>
+          <a href="./privacy.html">Privacy policy</a> · Open source (MIT) on <a href="https://github.com/stephensonsn/iconezera" rel="noopener">GitHub</a>
+        </footer>
+      </div>
 
-      <footer>
-        <a href="./privacy.html">Política de privacidade · Privacy policy</a> · Código aberto (MIT) em <a href="https://github.com/stephensonsn/iconezera" rel="noopener">GitHub</a>
-      </footer>
+      <div lang="pt-BR">
+        <h1>Ícones SVG gratuitos, direto no slide e no Photoshop.</h1>
+        <p class="lede">Digite o que procura — em qualquer idioma —, dê Enter e clique no ícone. No PowerPoint ele entra como SVG editável; no Photoshop, como Smart Object vetorial na cor e no tamanho que você escolher.</p>
+        <p>
+          <a class="cta" href="./downloads/iconezera-photoshop.ccx">Baixar para Photoshop (.ccx)</a>
+          <a class="cta" href="./manifest.xml" download="iconezera-manifest.xml">Baixar para PowerPoint (manifest)</a>
+        </p>
+
+        <h2 id="instalar">Como instalar</h2>
+        <h3>Photoshop (2026 ou Beta, versão 24 ou superior)</h3>
+        <ol>
+          <li>Baixe o arquivo <code>iconezera-photoshop.ccx</code> pelo botão acima.</li>
+          <li>Dê dois cliques nele. O app Creative Cloud instala o plugin.</li>
+          <li>No Photoshop, abra <strong>Plug-ins → iconeZERA</strong>.</li>
+        </ol>
+        <h3>PowerPoint Web</h3>
+        <ol>
+          <li>Baixe o manifest pelo botão acima.</li>
+          <li>Em <a href="https://powerpoint.office.com" rel="noopener">powerpoint.office.com</a>, abra uma apresentação → <strong>Inserir → Suplementos → Carregar meu suplemento</strong> e escolha o arquivo.</li>
+        </ol>
+        <h3>PowerPoint para Windows e Mac</h3>
+        <p>Enquanto o iconeZERA não está no AppSource, a instalação é por <em>sideload</em>: no Windows, compartilhe uma pasta com o manifest e cadastre-a em <strong>Arquivo → Opções → Central de Confiabilidade → Catálogos de Suplementos Confiáveis</strong>; no Mac, copie o manifest para <code>~/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef</code> e reabra o PowerPoint. Em empresas, o administrador do Microsoft 365 pode instalar para todos em <strong>Centro de administração → Aplicativos integrados</strong>.</p>
+
+        <h2>Como funciona</h2>
+        <ol>
+          <li>Abra o painel: <strong>Página Inicial → iconeZERA</strong> no PowerPoint, ou <strong>Plug-ins → iconeZERA</strong> no Photoshop.</li>
+          <li>Digite um termo (ou selecione uma palavra no slide / uma camada de texto antes de abrir o painel).</li>
+          <li>Clique no ícone. No PowerPoint, recolora ou converta em forma; no Photoshop, escolha cor e tamanho na barra inferior antes de clicar.</li>
+        </ol>
+        <p>Mais de 200 mil ícones open source via <a href="https://iconify.design" rel="noopener">Iconify</a>, apenas de coleções cuja licença dispensa crédito ao autor (MIT, Apache 2.0, ISC, CC0 e similares). Gratuito, sem conta, sem anúncios.</p>
+
+        <h2 id="suporte">Suporte</h2>
+        <p>Dúvidas, problemas ou pedido de um novo idioma:</p>
+        <ul>
+          <li>E-mail: <a href="mailto:stephenson.silva@outlook.com">stephenson.silva@outlook.com</a></li>
+          <li>Problemas e sugestões: <a href="https://github.com/stephensonsn/iconezera/issues" rel="noopener">github.com/stephensonsn/iconezera/issues</a></li>
+        </ul>
+        <h3>Problemas comuns</h3>
+        <ul>
+          <li><strong>O ícone não foi inserido:</strong> clique em uma área vazia do slide e tente de novo.</li>
+          <li><strong>Nenhum resultado:</strong> tente um termo mais simples ou troque o idioma no globo do painel.</li>
+          <li><strong>Entrou como imagem, não SVG:</strong> versões antigas do Office não aceitam SVG; o painel usa PNG automaticamente.</li>
+          <li><strong>Photoshop: "Abra um documento":</strong> o plugin só insere com um documento aberto.</li>
+        </ul>
+        <footer>
+          <a href="./privacy.html">Política de privacidade</a> · Código aberto (MIT) em <a href="https://github.com/stephensonsn/iconezera" rel="noopener">GitHub</a>
+        </footer>
+      </div>
     </main>
+    <script src="./pages.js"></script>
   </body>
 </html>
