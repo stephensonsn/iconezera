@@ -41,7 +41,7 @@ ICONEZERA_HTTP=1 npm run dev   # http://localhost:3000/taskpane.html
 
 ## Publicação
 
-Cada push na `main` roda auditoria, lint e testes e publica `apps/powerpoint/dist` no GitHub Pages (`.github/workflows/deploy.yml`). `npm run build:prod` gera também `dist/manifest.xml` com as URLs públicas — é esse arquivo que vai para o Partner Center (ver `docs/store-listing.md`).
+Cada push na `main` roda auditoria, lint e testes e publica `apps/powerpoint/dist` no GitHub Pages (`.github/workflows/deploy.yml`). `npm run build:prod` gera também `dist/manifest.xml` (URLs públicas, para o Partner Center — `docs/store-listing.md`) e `dist/downloads/iconezera-photoshop.ccx` (pacote do plugin, para o Adobe Exchange — `docs/exchange-listing.md`).
 
 ## Design
 

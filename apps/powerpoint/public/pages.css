@@ -12,6 +12,7 @@ p, ul, ol { margin: 0 0 14px; }
 a { color: var(--accent); }
 .lede { font-size: 20px; color: var(--ink-soft); }
 .meta { font-size: 12px; color: var(--ink-soft); }
-.cta { border-radius: 4px; display: inline-block; margin: 12px 0; padding: 12px 18px; background: var(--ink); color: var(--paper); font-weight: 600; text-decoration: none; }
+.cta { border-radius: 4px; display: inline-block; margin: 12px 8px 0 0; padding: 12px 18px; background: var(--ink); color: var(--paper); font-weight: 600; text-decoration: none; }
 .cta:hover { background: var(--accent); }
 footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--ink-soft); }
+code { font-size: 14px; background: #f5f5f5; padding: 1px 5px; border-radius: 3px; }

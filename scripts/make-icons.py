@@ -50,6 +50,12 @@ ps = os.path.join(os.path.dirname(__file__), "..", "apps", "photoshop", "public"
 os.makedirs(ps, exist_ok=True)
 open(os.path.join(ps, "plugin.png"), "wb").write(png(48))
 open(os.path.join(ps, "plugin@2x.png"), "wb").write(png(96))
+
+# Adobe Exchange: ícone da listagem em tamanhos grandes
+store = os.path.join(os.path.dirname(__file__), "..", "docs", "assets")
+os.makedirs(store, exist_ok=True)
+for size in (512, 1024):
+    open(os.path.join(store, f"exchange-icon-{size}.png"), "wb").write(png(size))
 for theme, color in (("dark", (230, 230, 230)), ("light", (60, 60, 60))):
     open(os.path.join(ps, f"panel-{theme}.png"), "wb").write(png(23, fg=color, glyph_only=True))
     open(os.path.join(ps, f"panel-{theme}@2x.png"), "wb").write(png(46, fg=color, glyph_only=True))
