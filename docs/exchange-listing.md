@@ -51,8 +51,14 @@ Os ícones são fornecidos pelo projeto open source Iconify. Termos em outros id
 
 No sign-in or license key is required. Open any document, then Plugins → iconeZERA. Type `rocket`, press Enter, click an icon: a vector Smart Object is placed at the center of the canvas at the size shown in the bottom bar. Use the color swatches to change the icon color. Network calls: api.iconify.design (icon search/data, with mirrors api.simplesvg.com / api.unisvg.com) and api.mymemory.translated.net (query translation). The plugin writes only to its own temporary folder.
 
+## Estado
+
+- **18/09/2026:** listagem + versão 0.1.0 enviadas para revisão da Adobe (status *In review*), junto com o perfil de publicador "iconeZERA" (UE: não). Plugin ID atribuído pela Adobe: `7a6126c8` (é o `id` do manifest).
+- Capturas 1360×800 em `docs/assets/screenshots/`, geradas com `scripts/screenshot-stage/stage.html` (copiar para `apps/photoshop/dist/`, servir com `vite preview --port 3300` e renderizar com Chrome headless `--window-size=1360,800 --virtual-time-budget=15000`).
+- Logo do publicador 250×250: `docs/assets/publisher-logo-250.png`.
+
 ## Pendências
 
-- [ ] Capturas de tela do painel dentro do Photoshop (tamanho conforme o formulário).
+- [ ] Acompanhar a revisão em https://developer.adobe.com/distribute/listings/4355948/UXP/7a6126c8/overview
 - [ ] Teste no Windows.
 - [ ] Confirmar no Photoshop: tamanho em px, camada de texto → busca, tema claro.

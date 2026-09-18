@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>stage</title>
+<style>
+  html,body{margin:0;width:1360px;height:800px;overflow:hidden;background:#1e1e1e;font-family:"Segoe UI",system-ui,sans-serif;color:#fff}
+  .stage{position:relative;width:1360px;height:800px;background:linear-gradient(135deg,#2a2a2a,#161616)}
+  .copy{position:absolute;left:96px;top:150px;width:560px}
+  .copy h1{margin:0 0 18px;font-size:48px;line-height:1.1;letter-spacing:-.02em}
+  .copy h1 b{color:#4b9ef5}
+  .copy p{margin:0 0 12px;font-size:22px;line-height:1.4;color:#c8c8c8}
+  .copy .tag{display:inline-block;margin-top:18px;padding:6px 12px;border:1px solid #4b9ef5;border-radius:4px;color:#4b9ef5;font-size:15px;font-weight:600}
+  .frame{position:absolute;right:120px;top:60px;width:352px;height:680px;background:#323232;border:1px solid #111;border-radius:6px;box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden}
+  .frame .bar{height:34px;display:flex;align-items:center;padding:0 12px;background:#2b2b2b;border-bottom:1px solid #1a1a1a;font-size:12px;color:#ddd}
+  .frame iframe{border:0;width:352px;height:646px;background:#323232}
+</style></head>
+<body><div class="stage">
+  <div class="copy"><h1 id="h">200,000+ free icons, <b>right inside Photoshop</b></h1><p id="p">Search in any language, pick a color and size, click: a vector Smart Object lands on your canvas.</p><span class="tag" id="t">Free · No account · Open source</span></div>
+  <div class="frame"><div class="bar">iconeZERA</div><iframe id="f" src="./index.html"></iframe></div>
+</div>
+<script>
+// ?q=termo&color=%23hex&lang=Nome&h=Titulo&p=Texto — prepara a cena dentro do iframe (mesma origem)
+const params = new URLSearchParams(location.search);
+if (params.get("h")) document.getElementById("h").innerHTML = params.get("h");
+if (params.get("p")) document.getElementById("p").textContent = params.get("p");
+if (params.get("t")) document.getElementById("t").textContent = params.get("t");
+const f = document.getElementById("f");
+f.addEventListener("load", async () => {
+  const d = f.contentDocument, w = f.contentWindow;
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  await wait(800);
+  if (params.get("lang")) {
+    d.getElementById("language-button").click();
+    [...d.querySelectorAll(".language-item")].find((l) => l.textContent.includes(params.get("lang")))?.click();
+  }
+  if (params.get("zoom")) d.querySelector(`.zoom[data-zoom="${params.get("zoom")}"]`).click();
+  if (params.get("q")) {
+    const i = d.getElementById("search-input"); i.value = params.get("q");
+    i.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Enter" }));
+    await wait(4500);
+  }
+  if (params.get("color")) d.querySelector(`.swatch[data-color="${params.get("color")}"]`).click();
+  if (params.get("menu")) d.getElementById("language-button").click();
+  await wait(600);
+  document.title = "ready";
+});
+</script></body></html>

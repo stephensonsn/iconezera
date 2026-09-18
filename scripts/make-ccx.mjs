@@ -10,5 +10,9 @@ const target = `${siteDownloads}iconezera-photoshop.ccx`;
 if (!existsSync(`${pluginDist}manifest.json`)) throw new Error("Rode `npm run build:ps` antes");
 mkdirSync(siteDownloads, { recursive: true });
 rmSync(target, { force: true });
-execFileSync("zip", ["-r", "-X", "-q", target, "."], { cwd: pluginDist, stdio: "inherit" });
+// -X: sem atributos estendidos; -x: sem lixo do macOS (.DS_Store, __MACOSX, ._*) — a Adobe rejeita o pacote com eles.
+execFileSync("zip", ["-r", "-X", "-q", target, ".", "-x", ".DS_Store", "*/.DS_Store", "__MACOSX/*", "._*", "*/._*"], {
+  cwd: pluginDist,
+  stdio: "inherit",
+});
 console.log(`pacote → ${target}`);
