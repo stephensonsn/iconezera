@@ -9,11 +9,12 @@
     <div class="panel">
       <div class="toolbar">
         <div class="search">
-          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 0 0 0-13Zm4.7 11.2L20 20"/></svg>
+          <div id="search-button" class="search-icon" title="">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 0 0 0-13Zm4.7 11.2L20 20"/></svg>
+          </div>
           <input id="search-input" type="text" maxlength="80" />
         </div>
-        <button id="search-button" class="cta" type="button"></button>
-        <button id="language-button" class="quiet" type="button"><span id="language-code"></span></button>
+        <div id="language-button" class="btn quiet"><span id="language-code"></span></div>
       </div>
       <p id="status"></p>
       <div id="language-menu" hidden>
@@ -27,31 +28,23 @@
         </div>
         <div id="grid"></div>
         <div id="loader" hidden></div>
-        <button id="more" class="secondary" type="button" hidden></button>
+        <div id="more" class="btn secondary" hidden></div>
       </div>
       <div class="tools">
-        <div class="tool">
+        <div class="tool-row">
           <span id="color-label" class="tool-label"></span>
-          <div class="tool-row">
-            <button id="swatch-foreground" class="swatch foreground" type="button"></button>
-            <div id="swatches"></div>
-            <input id="color-input" type="text" maxlength="7" spellcheck="false" />
-          </div>
+          <div id="swatch-foreground" class="swatch foreground"></div>
+          <div id="swatches"></div>
+          <input id="color-input" type="text" maxlength="7" spellcheck="false" />
         </div>
-        <div class="tool">
-          <span id="size-label" class="tool-label"></span>
-          <div class="tool-row">
-            <input id="size-input" type="number" min="8" max="4096" step="8" />
-            <span class="unit">px</span>
-          </div>
-        </div>
-        <div class="tool">
-          <span id="zoom-label" class="tool-label"></span>
-          <div class="tool-row">
-            <button class="zoom" data-zoom="s" type="button">S</button>
-            <button class="zoom" data-zoom="m" type="button">M</button>
-            <button class="zoom" data-zoom="l" type="button">L</button>
-          </div>
+        <div class="tool-row">
+          <span id="size-label" class="tool-label size-label"></span>
+          <input id="size-input" type="text" maxlength="4" />
+          <span class="unit">px</span>
+          <span id="zoom-label" class="tool-label zoom-label"></span>
+          <div class="zoom" data-zoom="s">S</div>
+          <div class="zoom" data-zoom="m">M</div>
+          <div class="zoom" data-zoom="l">L</div>
         </div>
       </div>
       <p id="footer"></p>

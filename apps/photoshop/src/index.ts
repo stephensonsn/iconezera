@@ -36,15 +36,21 @@ configureIconHosts(__ICONEZERA_SERVICES__.iconHosts);
 configureTranslationHost(__ICONEZERA_SERVICES__.translationHost);
 
 const $ = <T extends HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
+
+/** `Element.replaceChildren` não existe em versões antigas do UXP. */
+function setChildren(parent: Element, ...children: (Node | string)[]): void {
+  while (parent.firstChild) parent.removeChild(parent.firstChild);
+  parent.append(...children);
+}
 const input = $<HTMLInputElement>("#search-input");
-const searchButton = $<HTMLButtonElement>("#search-button");
+const searchButton = $("#search-button");
 const status = $("#status");
 const grid = $("#grid");
 const loader = $("#loader");
-const more = $<HTMLButtonElement>("#more");
+const more = $("#more");
 const toast = $("#toast");
 const footer = $("#footer");
-const languageButton = $<HTMLButtonElement>("#language-button");
+const languageButton = $("#language-button");
 const languageCode = $("#language-code");
 const languageMenu = $("#language-menu");
 const languageList = $("#language-list");
@@ -55,11 +61,11 @@ const suggestionList = $("#suggestion-list");
 const colorLabel = $("#color-label");
 const sizeLabel = $("#size-label");
 const zoomLabel = $("#zoom-label");
-const swatchForeground = $<HTMLButtonElement>("#swatch-foreground");
+const swatchForeground = $("#swatch-foreground");
 const swatches = $("#swatches");
 const colorInput = $<HTMLInputElement>("#color-input");
 const sizeInput = $<HTMLInputElement>("#size-input");
-const zoomButtons = Array.from(document.querySelectorAll<HTMLButtonElement>(".zoom"));
+const zoomButtons = Array.from(document.querySelectorAll<HTMLElement>(".zoom"));
 
 let host: Host;
 let language: Language = resolveLanguage("en");
@@ -163,7 +169,8 @@ function toggleLanguageMenu(open: boolean): void {
 
 function renderLanguageList(): void {
   const options = LANGUAGES.some(({ code }) => code === language.code) ? LANGUAGES : [language, ...LANGUAGES];
-  languageList.replaceChildren(
+  setChildren(
+    languageList,
     ...options.map((option) => {
       const item = document.createElement("div");
       item.className = "language-item" + (option.code === language.code ? " selected" : "");
@@ -188,7 +195,7 @@ function applyLanguage(next: Language): void {
   setUiLanguage(next.code);
 
   input.placeholder = t("searchPlaceholder");
-  searchButton.textContent = t("searchButton");
+  searchButton.title = t("searchButton");
   more.textContent = t("loadMore");
   languageButton.title = t("language");
   languageCode.textContent = next.code.slice(0, 2);
@@ -204,13 +211,13 @@ function applyLanguage(next: Language): void {
   const link = document.createElement("a");
   link.href = "https://iconify.design";
   link.textContent = "Iconify";
-  footer.replaceChildren(before, link, after);
+  setChildren(footer, before, link, after);
 
   suggestionsTitle.textContent = t("suggestionsTitle");
-  suggestionList.replaceChildren(
+  setChildren(suggestionList, 
     ...suggestions().terms.map((term) => {
-      const chip = document.createElement("button");
-      chip.type = "button";
+      const chip = document.createElement("div");
+      chip.className = "chip";
       chip.textContent = term;
       chip.addEventListener("click", () => {
         input.value = term;
@@ -268,7 +275,7 @@ async function search(term: string, from = language.code): Promise<void> {
 
   pending?.abort();
   const { signal } = (pending = new AbortController());
-  grid.replaceChildren();
+  setChildren(grid);
   more.hidden = true;
   loader.hidden = false;
   setStatus(t("searching"));
@@ -323,10 +330,9 @@ input.addEventListener("keydown", (event) => {
 more.addEventListener("click", () => void renderNextPage());
 languageButton.addEventListener("click", () => toggleLanguageMenu(languageMenu.hidden));
 
-swatches.replaceChildren(
+setChildren(swatches, 
   ...SWATCHES.map((hex) => {
-    const swatch = document.createElement("button");
-    swatch.type = "button";
+    const swatch = document.createElement("div");
     swatch.className = "swatch";
     swatch.dataset.color = hex;
     swatch.title = hex;
@@ -343,9 +349,15 @@ colorInput.addEventListener("change", () => {
   else applyColorUi();
 });
 sizeInput.addEventListener("change", () => setSize(Number(sizeInput.value)));
+sizeInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") setSize(Number(sizeInput.value));
+});
+colorInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") colorInput.dispatchEvent(new Event("change"));
+});
 for (const button of zoomButtons) button.addEventListener("click", () => setZoom(button.dataset.zoom ?? "m"));
 
-loader.replaceChildren(
+setChildren(loader, 
   ...Array.from({ length: SKELETON_CELLS }, () => {
     const cell = document.createElement("div");
     cell.className = "skeleton";
