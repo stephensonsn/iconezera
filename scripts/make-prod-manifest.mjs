@@ -11,6 +11,8 @@ const target = new URL("../apps/powerpoint/dist/manifest.xml", import.meta.url);
 
 const manifest = readFileSync(source, "utf8")
   .replaceAll(DEV_ORIGIN, base)
+  // Office faz cache do manifest por ID+versão: produção usa 4º segmento 100+ para nunca colidir com o de desenvolvimento
+  .replace(/<Version>(\d+)\.(\d+)\.(\d+)\.(\d+)<\/Version>/, (_, a, b, c, d) => `<Version>${a}.${b}.${c}.${Number(d) + 100}</Version>`)
   .replace(/<SupportUrl DefaultValue="[^"]*"\/>/, `<SupportUrl DefaultValue="${base}/#suporte"/>`)
   .replace(/(<bt:Url id="GetStarted.LearnMoreUrl" DefaultValue=")[^"]*"/, `$1${base}/"`);
 
