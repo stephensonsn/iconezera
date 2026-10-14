@@ -1,0 +1,7 @@
+#!/bin/sh
+# Bloqueia o push se lint, testes ou build falharem — o deploy no GitHub Pages roda os mesmos passos.
+set -e
+echo "pre-push: lint + testes + build (o mesmo que o deploy executa)"
+npm run lint
+npm test
+npm run build:prod

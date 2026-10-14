@@ -31,7 +31,9 @@ npm run certs      # uma vez: instala o certificado HTTPS local (pede a senha do
 npm run sideload   # sobe o servidor em https://localhost:3000 e abre o PowerPoint com o add-in
 ```
 
-No PowerPoint: **Página Inicial → iconeZERA**. Para encerrar: `npm run sideload:stop`.
+No PowerPoint: **Página Inicial → iconeZERA**. Para encerrar: `npm run sideload:stop` (para o servidor **e reinstala o manifest de produção**, senão o PowerPoint fica apontando para `localhost:3000` e mostra "não é possível carregar o suplemento"). Para instalar/reparar o manifest de produção a qualquer momento: `npm run manifest:prod`.
+
+O hook `.githooks/pre-push` roda lint, testes e build antes de cada push — o mesmo que o deploy executa — e bloqueia o push se algo falhar.
 
 Só para ver o painel num navegador comum (sem Office; o clique copia o SVG):
 
