@@ -4,10 +4,10 @@
   var root = document.documentElement;
 
   function read() {
-    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+    try { return localStorage.getItem(KEY); } catch { return null; }
   }
   function save(lang) {
-    try { localStorage.setItem(KEY, lang); } catch (e) { /* sem armazenamento: só não lembra */ }
+    try { localStorage.setItem(KEY, lang); } catch { /* sem armazenamento: só não lembra */ }
   }
   function apply(lang) {
     root.setAttribute("data-lang", lang);
