@@ -9,7 +9,12 @@ const base = baseUrl.href.replace(/\/$/, "");
 const source = new URL("../apps/powerpoint/manifest.xml", import.meta.url);
 const target = new URL("../apps/powerpoint/dist/manifest.xml", import.meta.url);
 
-const manifest = readFileSync(source, "utf8")
+const devManifest = readFileSync(source, "utf8");
+if (!devManifest.includes(DEV_ORIGIN)) {
+  throw new Error("apps/powerpoint/manifest.xml deve ser o manifest de DESENVOLVIMENTO (localhost:3000). Restaure-o com git antes de gerar o de produção.");
+}
+
+const manifest = devManifest
   .replaceAll(DEV_ORIGIN, base)
   // Office faz cache do manifest por ID+versão: produção usa 4º segmento 100+ para nunca colidir com o de desenvolvimento
   .replace(/<Version>(\d+)\.(\d+)\.(\d+)\.(\d+)<\/Version>/, (_, a, b, c, d) => `<Version>${a}.${b}.${c}.${Number(d) + 100}</Version>`)

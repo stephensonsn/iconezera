@@ -9,6 +9,9 @@ if pgrep -x "Microsoft PowerPoint" >/dev/null; then echo "Feche o PowerPoint (Cm
 mkdir -p "$WEF"
 # O Office guarda cópia do manifest em cache por ID+versão; sem limpar, ele ignora o arquivo novo.
 find "$CACHE" -path "*/Manifests/${ID}_*" -delete 2>/dev/null || true
+# `office-addin-debugging` cria o arquivo do PowerPoint como HARDLINK do manifest do repositório:
+# gravar por cima alteraria o repositório. Remove o link e grava uma cópia independente.
+rm -f "$WEF/$ID.manifest.xml"
 curl -fsSL https://stephensonsn.github.io/iconezera/manifest.xml -o "$WEF/$ID.manifest.xml"
 grep -q "localhost" "$WEF/$ID.manifest.xml" && { echo "ERRO: manifest baixado ainda aponta para localhost"; exit 1; }
 echo "Manifest de produção instalado e cache limpo. Abra o PowerPoint."
